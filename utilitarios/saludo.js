@@ -9,6 +9,7 @@ saludar=function(){
 
     mostrarTexto("lblResultado",mensajeBienvenida);
     mostrarImagen("imgSaludo","./Imagenes/main-qimg-8b9d64dd7a997f9c55116b167429a478.webp")
+    mostrarTextoEnCaja("txtNombre", " ");
     
 }
 
@@ -16,6 +17,12 @@ mostrarImagen=function(idComponente,rutaImagen){
     let componente;
     componente=document.getElementById(idComponente)
     componente.src = rutaImagen;
+}
+
+mostrarTextoEnCaja = function(idComponente,mensaje){
+    let componente;
+    componente= document.getElementById(idComponente);
+    componente.value = mensaje;
 }
 
 mostrarTexto = function(idComponente,mensaje){
