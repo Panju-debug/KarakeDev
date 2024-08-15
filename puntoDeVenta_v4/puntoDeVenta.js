@@ -34,7 +34,7 @@ calcularValorTotal = function () {
 
     //variables para almacenar los retornos de las funciones
     let valorSubtotal=calcularSubtotal(precioProducto,cantidad);
-    let valorDescuento=calcularValorDescuento(precioProducto,porcentajeDescuento);
+    let valorDescuento=calcularValorDescuento(valorSubtotal,porcentajeDescuento);
     let valorIVA=calcularIVA(precioProducto);
     let valorTotal=calcularTotal(valorSubtotal,valorDescuento,valorIVA);
 
@@ -59,6 +59,7 @@ calcularValorTotal = function () {
      */
     //6. Invocar a calcularValorDescuento y lo que devuelve guardar en la variable valorDescuento
     //7. Mostrar el resultado en el componente lblDescuento
+    mostrarTexto("lblDescuento",valorDescuento)
     /*
         Caso de prueba: 
             - cantidad: 10 
