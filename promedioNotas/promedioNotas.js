@@ -10,6 +10,12 @@ calcularPromedioNotas=function(){
     promediofloat=calcularPromedio(notaFloat1,notaFloat2,notaFloat3);
     promedio=promediofloat.toFixed(2);
     mostrarTexto("lblPromedio",promedio);
+    if(promedio>7){
+        mostrarImagen("img1","./imagenes/exito.jpg");
+    }else{
+        mostrarImagen("img1","./imagenes/Fracaso.jpg");
+    }
+    
     return promedio
     
 }
