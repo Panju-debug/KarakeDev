@@ -9,11 +9,23 @@ calcularPromedioNotas=function(){
 
     promediofloat=calcularPromedio(notaFloat1,notaFloat2,notaFloat3);
     promedio=promediofloat.toFixed(2);
-    mostrarTexto("lblPromedio",promedio);
-    if(promedio>7){
-        mostrarImagen("img1","./imagenes/exito.jpg");
-    }else{
-        mostrarImagen("img1","./imagenes/Fracaso.jpg");
+    
+    if(promedio<5 && promedio>0){
+        mostrarTexto("lblPromedio",promedio);
+        mostrarImagen("img1","./reprobado.jpg.gif");
+        mostrarTexto("lblResultado","Reprobado");  
+    }else if(promedio>=5 && promedio<=8){
+        mostrarImagen("img1","./good.gif.gif");
+        mostrarTexto("lblResultado","Buen Trabajo");  
+    }else if(promedio>8 && promedio<=10){
+        mostrarTexto("lblPromedio",promedio);
+        mostrarImagen("img1","./excelente.jfif");
+        mostrarTexto("lblResultado","Excelente");  
+    }
+    else{
+        
+        mostrarImagen("img1","./incorrecto.gif");
+        mostrarTexto("lblResultado","DATOS INCORRECTOS");  
     }
     
     return promedio
