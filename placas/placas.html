@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <script src="servicioPlacas.js"></script>
+    <script src="utilitariosCadenas.js"></script>
+    <script src="utilitarios.js"></script>
+    <script src="placas.js"></script>
+    <link rel="stylesheet" href="placas.css">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+        <div class="contenedor">
+            <div>
+                <h3 class="titulo">Ingrese su placa</h3>
+            </div>
+            <div class="cajaTexto caja">
+                <input type="text" id="txtprueba">
+            </div>
+            <div class="cajaTexto2 boton">
+                <input type="button" onclick="validarPlaca()" value="VALIDAR">
+                <input type="button" onclick="limpiar()" value="LIMPIAR">
+            </div>
+            <div class="mostrar">
+                <h3 id="lblEstructura"></h3>
+                <h3 id="lblErrores"></h3>
+                <h3 id="txtProvincia">Provincia:</h3>
+                <h3 id="txtVehiculo">Tipo de vehiculo:</h3>
+                <h3 id="txtPicoPlaca">Pico y Placa:</h3>
+            </div>
+        </div>
+        
+</body>
+</html>
