@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <script src="serviciosJuego.js"></script>
+    <script src="juego.js"></script>
+    <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="juegos.css">
+</head>
+<body>
+    <div>
+        <div>
+            <h3>JUEGA PIEDRA, PAPEL O TIJERA</h3>
+        </div>
+        <div>
+            <img src="./imagenes/piedra.jpg" width="20%" onclick="jugar('Piedra')"/>
+            <img src="./imagenes/papel.jpg" width="20%" onclick="jugar('Papel')"/>
+            <img src="./imagenes/tijera1.png" width="20%" onclick="jugar('Tijera')"/>
+        </div>
+        <div>
+            <div id="txtGanador">jeje</div>
+        </div>
+        <div>
+            <div id="lblUsuario">
+                TU PUNTAJE:
+            </div>
+            <div id="lblComputadora">
+                PUNTAJE COMPUTADORA:
+            </div>
+        </div>
+    </div>
+    
+    <img width="20%" onclick="jugar()" id="imgCompu"/>
+    
+</body>
+</html>
