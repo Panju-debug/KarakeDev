@@ -4,3 +4,42 @@ img {
    object-fit: cover;
    border: 2px solid #000;
 }
+body{
+   background-image: url(https://messenger.es/wp-content/uploads/2009/06/fondo-super-mario.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.titulo{
+   color: rgb(16, 0, 110);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+}
+.imagen{
+   display: flex;
+   flex-direction: column;
+   
+}
+.imgCentro{
+   display: flex;
+   flex-direction: row;
+   
+}
+.filas{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.textos{
+   font-weight: 900;
+   font-size: 2rem;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: rgb(112, 4, 107);
+}
+.boton{
+   width: 10em;
+   height: 3em;
+   background-color: chartreuse;
+}

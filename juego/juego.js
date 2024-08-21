@@ -14,15 +14,40 @@ jugar=function(seleccionado){
     if(ganador==0){ 
         mostrarTexto("txtGanador","EMPATE");    
     }if(ganador==1){
-        mostrarTexto("txtGanador","GANASTE LA PARTIDA");
+        if(puntosUsuario==-1){
+            mostrarTexto("txtGanador","REINICIA LA PARTIDA");
+        }else{
+            mostrarTexto("txtGanador","GANASTE LA PARTIDA");
+        }
+        
         puntosUsuario=puntosUsuario+1;
         mostrarTexto("lblUsuario","TU PUNTAJE: "+puntosUsuario);
         if(puntosUsuario==5){
             mostrarTexto("txtGanador","HAS GANADO EL JUEGO!!")
+            puntosUsuario=-1;
         }
     }if(ganador==2){
-        mostrarTexto("txtGanador","PERDISTE LA PARTIDA");
+        if(puntosComputador==-1){
+            mostrarTexto("txtGanador","REINICIA LA PARTIDA");
+        }else{
+            mostrarTexto("txtGanador","PERDISTE LA PARTIDA");
+        }
         puntosComputador=puntosComputador+1;
         mostrarTexto("lblComputadora","PUNTAJE COMPUTADOR: " + puntosComputador);
+        if(puntosComputador==5){
+            mostrarTexto("txtGanador","HAS PERDIDO EL JUEGO :C")
+            puntosComputador=-1;
+
+        }
+
     }
+}
+
+limpiar=function(){
+    puntosUsuario=0;
+    puntosComputador=0;
+    mostrarTexto("txtGanador","");
+    mostrarTexto("lblUsuario","TU PUNTAJE: " + puntosUsuario);
+    mostrarTexto("lblComputadora","PUNTAJE COMPUTADORA: "+ puntosComputador);
+    mostrarImagen("imgCompu","./imagenes/blanco.jpg");
 }

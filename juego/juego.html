@@ -7,29 +7,34 @@
     <link rel="stylesheet" href="juegos.css">
 </head>
 <body>
-    <div>
-        <div>
+    <div class="contenedor">
+        <div class="titulo">
             <h3>JUEGA PIEDRA, PAPEL O TIJERA</h3>
         </div>
-        <div>
-            <img src="./imagenes/piedra.jpg" width="20%" onclick="jugar('Piedra')"/>
-            <img src="./imagenes/papel.jpg" width="20%" onclick="jugar('Papel')"/>
-            <img src="./imagenes/tijera1.png" width="20%" onclick="jugar('Tijera')"/>
-        </div>
-        <div>
-            <div id="txtGanador">jeje</div>
-        </div>
-        <div>
-            <div id="lblUsuario">
-                TU PUNTAJE:
+        <div class="filas">
+            <div class="imagen">
+                <img src="./imagenes/piedra.jpg" width="20%" onclick="jugar('Piedra')"/>
+                <img src="./imagenes/papel.jpg" width="20%" onclick="jugar('Papel')"/>
+                <img src="./imagenes/tijera1.png" width="20%" onclick="jugar('Tijera')"/>
             </div>
-            <div id="lblComputadora">
-                PUNTAJE COMPUTADORA:
+            <img width="20%"  id="imgCompu" class="imgCentro" src="./imagenes/blanco.jpg"/>
+            <div class="textos">
+                <div id="txtGanador"></div>
+            </div>
+            <div class="textos">
+                <div id="lblUsuario">
+                    TU PUNTAJE: 0
+                </div>
+                <div id="lblComputadora">
+                    PUNTAJE COMPUTADORA: 0
+                </div>
+                <input type="button" value="NUEVA PARTIDA" onclick="limpiar()" class="boton"/>
             </div>
         </div>
+        
     </div>
     
-    <img width="20%" onclick="jugar()" id="imgCompu"/>
+    
     
 </body>
 </html>
