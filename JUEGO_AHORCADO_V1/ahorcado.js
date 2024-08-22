@@ -51,6 +51,16 @@ mostrarLetra=function(letra,posicion){
     }
 }
 
-validar=function(){
+validar=function(letra){
+    let letrasEncontradas=0;
+    let  caracter;
 
+    for(i=0;i<palabraSecreta.length;i++){
+        caracter=palabraSecreta.charAt(i)
+        if(caracter==letra){
+            letrasEncontradas++;
+            mostrarLetra(letra,i)
+        }
+    }
 }
+
