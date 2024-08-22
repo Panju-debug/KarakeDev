@@ -22,13 +22,22 @@ esDigito = function (caracter) {
 
 esGuion=function(caracter){
     let guion;
-
     guion=caracter.charCodeAt(0);
+<<<<<<< HEAD
     if(guion==45){}
 
 esMayuscula=function(caracter){
+=======
+    if(guion==45){
+        return true
+    }else{
+        return false
+    }
+}
+>>>>>>> 701274a7cf78ec34140bae662394ef388791d93b
     
 
+esMayuscula=function(caracter){
     if(caracter>=65 && caracter<=90){
         return true;
     }else{
@@ -58,4 +67,9 @@ EsDigito1=function(caracter){
     }else{
         return false
     }
+<<<<<<< HEAD
 }}
+=======
+
+}
+>>>>>>> 701274a7cf78ec34140bae662394ef388791d93b
