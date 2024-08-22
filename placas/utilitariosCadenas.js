@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 esMayuscula = function (caracter,posicion) {
     let mayuscula;
     mayuscula = caracter.charCodeAt(posicion);
@@ -24,19 +24,17 @@ esGuion=function(caracter){
     let guion;
 
     guion=caracter.charCodeAt(0);
-    if(guion==45){
-=======
+    if(guion==45){}
+
 esMayuscula=function(caracter){
     
 
     if(caracter>=65 && caracter<=90){
->>>>>>> ecba08b5ce2b68be4ad1fd133aa51cadc8f6ef38
         return true;
     }else{
         return false;
     }
-<<<<<<< HEAD
-=======
+
 }
 
 EsDigito= function(caracter){
@@ -60,5 +58,4 @@ EsDigito1=function(caracter){
     }else{
         return false
     }
->>>>>>> ecba08b5ce2b68be4ad1fd133aa51cadc8f6ef38
-}
+}}
