@@ -32,3 +32,32 @@ invertirCadena=function(cadenaInversa){
   }
   cambiarTexto("mostrarInverso",concatenar)
 }
+
+buscarLetra=function(cadena,letra){
+  let letraIterada;
+  let existeLetra=false;
+
+  for(let i=0;cadena.length;i++){
+    letraIterada=cadena.charAt(i);
+   if(letraIterada==letra){
+    existeLetra==true;
+   }
+  }
+  if(existeLetra==true){
+    return true;
+  }else{
+    return true;
+  }
+}
+
+contarMayusculas=function(cadena){
+  let letra;
+  let contadorMayusculas=0;
+
+  for(let i=0;cadena.length;i++){
+    letra=cadena.charAt(i);
+    if(esMayuscula(letra)){
+      contadorMayusculas++;
+    }
+  }
+}
