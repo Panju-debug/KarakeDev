@@ -50,3 +50,17 @@ deshabilitarComponente = function(idComponente){
 habilitarComponente = function(idComponente){
     document.getElementById(idComponente).disabled = false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
