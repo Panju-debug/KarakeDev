@@ -1,5 +1,5 @@
 let empleados = [
-  { cedula: "1714616123", nombre: "John", apellido: "Cena", sueldo: 500.0 },
+  { cedula: "1714616123", nombre: "JOHN", apellido: "CENA", sueldo: 500.0 },
   {
     cedula: "0914632123",
     nombre: "Luisa",
@@ -107,6 +107,8 @@ guardar = function () {
   if (cedula.length != 10 ) {
     mostrarTexto("lblErrorCedula", "DEBE SER DE 10 DIGITOS");
     errores++;
+  }if(cedula.length==10){
+    mostrarTexto("lblErrorCedula", "");
   }
   if (nombre.length < 3) {
     mostrarTexto("lblErrorNombre", "DEBE TENER MINIMO 3 CARACTERES");
@@ -116,6 +118,8 @@ guardar = function () {
     if (esMayuscula == false) {
       mostrarTexto("lblErrorNombre", "LOS CARACTERES DEBEN SER MAYUSCULAS");
       errores++;
+    }else{
+      mostrarTexto("lblErrorNombre", "");
     }
   } if (apellido.length < 3) {
     mostrarTexto("lblErrorApellido", "DEBE TENER MINIMO 3 CARACTERES");
@@ -125,10 +129,14 @@ guardar = function () {
     if (esMayuscula == false) {
       mostrarTexto("lblErrorApellido", "LOS CARACTERES DEBEN SER MAYUSCULAS");
       errores++;
+    }else{
+      mostrarTexto("lblErrorApellido", "");
     }
   } if (sueldo < 400 || sueldo > 5000 || (isNaN(sueldo))) {
     mostrarTexto("lblErrorSueldo", "EL VALOR DEBE ESTAR ENTRE 400 Y 5000");
     errores++;
+  }if(sueldo>=400 && sueldo<=5000){
+    mostrarTexto("lblErrorSueldo", "");
   } if (obligatorio == 4) {
     alert("LOS 4 CAMPOS SON OBLIGATORIOS")
     errores++;
@@ -145,9 +153,18 @@ guardar = function () {
         empleados.push(empleado);
         mostrarEmpleados();
         deshabilitar()
-        
+        esNuevo=false;
       } else {
         alert("YA EXISTE UN EMPLEADO CON LA CEDULA" + " " + empleado.cedula)
+        let existeEmpleado=buscarEmpleado(empleado.cedula)
+        if(existeEmpleado!=null){
+          existeEmpleado.nombre=empleado.nombre;
+          existeEmpleado.apellido=empleado.apellido;
+          existeEmpleado.sueldo=empleado.sueldo;
+          alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+          mostrarEmpleados();
+          deshabilitar();
+        }
       }
     }
   }
@@ -174,4 +191,30 @@ deshabilitar=function(){
         deshabilitarComponente("txtApellido");
         deshabilitarComponente("txtSueldo");
         deshabilitarComponente("btnGuardar");
+}
+
+ejecutarBusqueda=function(){
+  let buscaCedula=recuperarTexto("txtBusquedaCedula");
+  let empleadoEncontrado=buscarEmpleado(buscaCedula);
+  if(empleadoEncontrado==null){
+    alert("EL EMPLEADO NO EXISTE");
+  } else{
+    mostrarTextoEnCaja("txtCedula",empleadoEncontrado.cedula);
+    mostrarTextoEnCaja("txtNombre",empleadoEncontrado.nombre);
+    mostrarTextoEnCaja("txtApellido",empleadoEncontrado.apellido);
+    mostrarTextoEnCaja("txtSueldo",empleadoEncontrado.sueldo);
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    deshabilitarComponente("txtCedula");
+  }
+}
+
+limpiar=function(){
+  mostrarTextoEnCaja("txtCedula","");
+  mostrarTextoEnCaja("txtNombre","");
+  mostrarTextoEnCaja("txtApellido","");
+  mostrarTextoEnCaja("txtSueldo","");
+  esNuevo=false;
+  deshabilitar();
 }
