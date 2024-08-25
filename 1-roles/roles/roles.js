@@ -367,18 +367,21 @@ mostrarTotales=function(){
   let totalEmpleado=0;
   let totalEmpleador=0;
   let totalAPagar=0;
-  let sueldo=0;
+  let aporte;
+  let sueldoTotal=0;
+  let totalNomina=0;
 
   for(i=0;i<roles.length;i++){
     totales=roles[i];
     totalEmpleado=totalEmpleado+totales.empleado;
     totalEmpleador=totalEmpleador+totales.aporteEmpleador;
+    aporte=calcularAporteEmpleado(totales.sueldo);
+    sueldoTotal+=(totales.sueldo-aporte);
     totalAPagar=totalEmpleado+totalEmpleador;
-    sueldo=sueldo+totales.sueldo;
+    totalNomina=totalAPagar+sueldoTotal;
   }
   mostrarTexto("infoTotalPago",totalAPagar);
   mostrarTexto("infoAporteEmpresa",totalEmpleador);
   mostrarTexto("infoAporteEmpleado",totalEmpleado);
-  let totalNomina=totalEmpleado+totalEmpleador+totalAPagar+;
   mostrarTexto("infNomina",totalNomina);
 }
